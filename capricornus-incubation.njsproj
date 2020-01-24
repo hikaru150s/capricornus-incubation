@@ -1,151 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ProjectGuid>{3cf0c640-9ac3-4754-8279-50bd32cedb65}</ProjectGuid>
-        <ProjectHome>.</ProjectHome>
-        <ProjectView>ShowAllFiles</ProjectView>
-        <StartupFile>app.ts</StartupFile>
-        <WorkingDirectory>.</WorkingDirectory>
-        <OutputPath>.</OutputPath>
-        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-        <EnableTypeScript>true</EnableTypeScript>
-        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
-        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
-    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
-    <ItemGroup>
-        <Content Include="ormconfig.json" />
-        <Content Include="package-lock.json" />
-        <Content Include="package.json" />
-        <None Include="tsconfig.json" />
-        <Content Include="tslint.json" />
-        <Content Include="README.md" />
-        <None Include="app.ts" />
-        <None Include="classes\BaseEntity.ts" />
-        <None Include="classes\index.ts" />
-        <None Include="drivers\BaseDriver.ts" />
-        <None Include="drivers\MongoDriver.ts" />
-        <None Include="entities\Constraint.ts" />
-        <None Include="entities\ConstsraintSatisfactionQualityLog.ts" />
-        <None Include="entities\Evaluation.ts" />
-        <None Include="entities\EvaluationLog.ts" />
-        <None Include="entities\FormationQualityLog.ts" />
-        <None Include="entities\Goal.ts" />
-        <None Include="entities\GoalSatisfactionQualityLog.ts" />
-        <None Include="entities\Group.ts" />
-        <None Include="entities\GroupScoring.ts" />
-        <None Include="entities\GroupScoringLog.ts" />
-        <None Include="entities\index.ts" />
-        <None Include="entities\Question.ts" />
-        <None Include="entities\Student.ts" />
-        <None Include="entities\User.ts" />
-        <None Include="entities\UserScoring.ts" />
-        <None Include="entities\UserScoringLog.ts" />
-        <None Include="enums\index.ts" />
-        <None Include="enums\ScoringSessionType.ts" />
-        <None Include="enums\UserRoleType.ts" />
-        <None Include="errors\BadRequestError.ts" />
-        <None Include="errors\ForbiddenError.ts" />
-        <None Include="errors\GenericError.ts" />
-        <None Include="errors\index.ts" />
-        <None Include="errors\NotFoundError.ts" />
-        <None Include="errors\UnauthorizedError.ts" />
-        <None Include="globals\Constants.ts" />
-        <None Include="interfaces\index.ts" />
-        <None Include="interfaces\IPersonality.ts" />
-        <None Include="interfaces\IResponse.ts" />
-        <None Include="middlewares\asyncHandlers.ts" />
-        <None Include="middlewares\index.ts" />
-        <None Include="middlewares\jwtGuard.ts" />
-        <None Include="utils\errorLogger.ts" />
-        <None Include="utils\index.ts" />
-        <None Include="utils\parseRequest.ts" />
-        <None Include="utils\passwords.ts" />
-        <None Include="utils\stats.ts" />
-        <None Include="handlers\generic\errorHandler.ts" />
-        <None Include="handlers\generic\index.ts" />
-        <None Include="handlers\generic\morganLogRotator.ts" />
-        <None Include="handlers\generic\notFoundHandler.ts" />
-        <None Include="handlers\v1\ConstraintHandler.ts" />
-        <None Include="handlers\v1\ConstraintSatisfactionQualityLogHandler.ts" />
-        <None Include="handlers\v1\CsqMetricHandler.ts" />
-        <None Include="handlers\v1\EvaluationFormHandler.ts" />
-        <None Include="handlers\v1\EvaluationHandler.ts" />
-        <None Include="handlers\v1\EvaluationLogHandler.ts" />
-        <None Include="handlers\v1\FormationQualityLogHandler.ts" />
-        <None Include="handlers\v1\FqHandler.ts" />
-        <None Include="handlers\v1\GoalHandler.ts" />
-        <None Include="handlers\v1\GoalSatisfactionQualityLogHandler.ts" />
-        <None Include="handlers\v1\GroupHandler.ts" />
-        <None Include="handlers\v1\GroupScoringHandler.ts" />
-        <None Include="handlers\v1\GroupScoringLogHandler.ts" />
-        <None Include="handlers\v1\GsqHandler.ts" />
-        <None Include="handlers\v1\index.ts" />
-        <None Include="handlers\v1\LoginHandler.ts" />
-        <None Include="handlers\v1\LogoutHandler.ts" />
-        <None Include="handlers\v1\PfsHandler.ts" />
-        <None Include="handlers\v1\QuestionHandler.ts" />
-        <None Include="handlers\v1\StudentHandler.ts" />
-        <None Include="handlers\v1\UserHandler.ts" />
-        <None Include="handlers\v1\UserScoringHandler.ts" />
-        <None Include="handlers\v1\UserScoringLogHandler.ts" />
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="capricornus-incubation" />
-        <Folder Include="classes" />
-        <Folder Include="drivers" />
-        <Folder Include="entities" />
-        <Folder Include="enums" />
-        <Folder Include="errors" />
-        <Folder Include="globals" />
-        <Folder Include="handlers" />
-        <Folder Include="handlers\generic" />
-        <Folder Include="handlers\v1" />
-        <Folder Include="interfaces" />
-        <Folder Include="middlewares" />
-        <Folder Include="utils" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
-    <ProjectExtensions>
-        <VisualStudio>
-          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-            <WebProjectProperties>
-              <UseIIS>False</UseIIS>
-              <AutoAssignPort>True</AutoAssignPort>
-              <DevelopmentServerPort>0</DevelopmentServerPort>
-              <DevelopmentServerVPath>/</DevelopmentServerVPath>
-              <IISUrl>http://localhost:48022/</IISUrl>
-              <NTLMAuthentication>False</NTLMAuthentication>
-              <UseCustomServer>True</UseCustomServer>
-              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
-              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-            </WebProjectProperties>
-          </FlavorProperties>
-          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
-            <WebProjectProperties>
-              <StartPageUrl>
-              </StartPageUrl>
-              <StartAction>CurrentPage</StartAction>
-              <AspNetDebugging>True</AspNetDebugging>
-              <SilverlightDebugging>False</SilverlightDebugging>
-              <NativeDebugging>False</NativeDebugging>
-              <SQLDebugging>False</SQLDebugging>
-              <ExternalProgram>
-              </ExternalProgram>
-              <StartExternalURL>
-              </StartExternalURL>
-              <StartCmdLineArguments>
-              </StartCmdLineArguments>
-              <StartWorkingDirectory>
-              </StartWorkingDirectory>
-              <EnableENC>False</EnableENC>
-              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
-            </WebProjectProperties>
-          </FlavorProperties>
-        </VisualStudio>
-    </ProjectExtensions>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3cf0c640-9ac3-4754-8279-50bd32cedb65}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartupFile>app.ts</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".editorconfig" />
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="ormconfig.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <None Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="README.md" />
+    <None Include="app.ts" />
+    <None Include="classes\BaseEntity.ts" />
+    <None Include="classes\index.ts" />
+    <None Include="drivers\BaseDriver.ts" />
+    <None Include="drivers\MongoDriver.ts" />
+    <None Include="entities\Constraint.ts" />
+    <None Include="entities\ConstsraintSatisfactionQualityLog.ts" />
+    <None Include="entities\FormationQualityLog.ts" />
+    <None Include="entities\Goal.ts" />
+    <None Include="entities\GoalSatisfactionQualityLog.ts" />
+    <None Include="entities\Group.ts" />
+    <None Include="entities\index.ts" />
+    <None Include="enums\index.ts" />
+    <None Include="enums\ScoringSessionType.ts" />
+    <None Include="enums\UserRoleType.ts" />
+    <None Include="errors\BadRequestError.ts" />
+    <None Include="errors\ForbiddenError.ts" />
+    <None Include="errors\GenericError.ts" />
+    <None Include="errors\index.ts" />
+    <None Include="errors\NotFoundError.ts" />
+    <None Include="errors\UnauthorizedError.ts" />
+    <None Include="globals\Constants.ts" />
+    <None Include="interfaces\index.ts" />
+    <None Include="interfaces\IPersonality.ts" />
+    <None Include="interfaces\IResponse.ts" />
+    <None Include="middlewares\asyncHandlers.ts" />
+    <None Include="middlewares\index.ts" />
+    <None Include="middlewares\jwtGuard.ts" />
+    <None Include="utils\errorLogger.ts" />
+    <None Include="utils\index.ts" />
+    <None Include="utils\parseRequest.ts" />
+    <None Include="utils\passwords.ts" />
+    <None Include="utils\stats.ts" />
+    <None Include="handlers\generic\errorHandler.ts" />
+    <None Include="handlers\generic\index.ts" />
+    <None Include="handlers\generic\morganLogRotator.ts" />
+    <None Include="handlers\generic\notFoundHandler.ts" />
+    <None Include="handlers\v1\ConstraintHandler.ts" />
+    <None Include="handlers\v1\ConstraintSatisfactionQualityLogHandler.ts" />
+    <None Include="handlers\v1\FormationQualityLogHandler.ts" />
+    <None Include="handlers\v1\GoalHandler.ts" />
+    <None Include="handlers\v1\GoalSatisfactionQualityLogHandler.ts" />
+    <None Include="handlers\v1\GroupHandler.ts" />
+    <None Include="handlers\v1\index.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="capricornus-incubation" />
+    <Folder Include="classes" />
+    <Folder Include="drivers" />
+    <Folder Include="entities" />
+    <Folder Include="enums" />
+    <Folder Include="errors" />
+    <Folder Include="globals" />
+    <Folder Include="handlers" />
+    <Folder Include="handlers\generic" />
+    <Folder Include="handlers\v1" />
+    <Folder Include="interfaces" />
+    <Folder Include="middlewares" />
+    <Folder Include="utils" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

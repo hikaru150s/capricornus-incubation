@@ -16,26 +16,10 @@ import {
 import {
   ConstraintHandler,
   ConstraintSatisfactionQualityLogHandler,
-  CsqMetricHandler,
-  EvaluationFormHandler,
-  EvaluationHandler,
-  EvaluationLogHandler,
   FormationQualityLogHandler,
-  FqHandler,
   GoalHandler,
   GoalSatisfactionQualityLogHandler,
   GroupHandler,
-  GroupScoringHandler,
-  GroupScoringLogHandler,
-  GsqHandler,
-  LoginHandler,
-  LogoutHandler,
-  PfsHandler,
-  QuestionHandler,
-  StudentHandler,
-  UserHandler,
-  UserScoringHandler,
-  UserScoringLogHandler,
 } from './handlers/v1';
 import { jwtGuard } from './middlewares';
 
@@ -55,28 +39,12 @@ centaurus.use(cors({
 }));
 
 // Main Handler
-centaurus.use('/api/user', UserHandler);
 centaurus.use('/api/group', jwtGuard, GroupHandler);
-centaurus.use('/api/student', jwtGuard, StudentHandler);
-centaurus.use('/api/user_scoring', jwtGuard, UserScoringHandler);
-centaurus.use('/api/group_scoring', jwtGuard, GroupScoringHandler);
-centaurus.use('/api/eval', jwtGuard, EvaluationHandler);
-centaurus.use('/api/question', jwtGuard, QuestionHandler);
-centaurus.use('/api/user_scoring_log', jwtGuard, UserScoringLogHandler);
-centaurus.use('/api/group_scoring_log', jwtGuard, GroupScoringLogHandler);
-centaurus.use('/api/eval_log', jwtGuard, EvaluationLogHandler);
 centaurus.use('/api/goal', jwtGuard, GoalHandler);
 centaurus.use('/api/constraint', jwtGuard, ConstraintHandler);
 centaurus.use('/api/csq/log', jwtGuard, ConstraintSatisfactionQualityLogHandler);
-centaurus.use('/api/csq/metric', jwtGuard, CsqMetricHandler);
 centaurus.use('/api/fq/log', jwtGuard, FormationQualityLogHandler);
-centaurus.use('/api/fq/metric', jwtGuard, FqHandler);
 centaurus.use('/api/gsq/log', jwtGuard, GoalSatisfactionQualityLogHandler);
-centaurus.use('/api/gsq/metric', jwtGuard, GsqHandler);
-centaurus.use('/api/pfs/metric', jwtGuard, PfsHandler);
-centaurus.use('/api', EvaluationFormHandler);
-centaurus.use('/api/login', LoginHandler);
-centaurus.use('/api/logout', LogoutHandler);
 
 // Catch 404 error
 centaurus.use(notFoundHandler);
